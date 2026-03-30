@@ -148,7 +148,7 @@ export const CLIENTS = [
   "Elvie",
   "Johnson & Johnson",
   "Takeda",
-  "Merck",
+  "Eargo Hearing",
   "MysteryVibe",
 ];
 
