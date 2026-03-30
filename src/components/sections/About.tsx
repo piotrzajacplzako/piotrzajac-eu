@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ABOUT_BIO, COMPETENCIES, fadeInUp } from "@/lib/constants";
+import { ArrowUpRight } from "lucide-react";
+import {
+  ABOUT_BIO,
+  CURRENT_ROLES,
+  COMPETENCIES,
+  fadeInUp,
+} from "@/lib/constants";
 
 export default function About() {
   return (
@@ -15,6 +21,7 @@ export default function About() {
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-accent-secondary rounded-full mb-12" />
         </motion.div>
 
+        {/* Bio + Photo */}
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 mb-20">
           <motion.div className="lg:col-span-3 space-y-6" {...fadeInUp}>
             {ABOUT_BIO.map((paragraph, i) => (
@@ -43,12 +50,55 @@ export default function About() {
                 sizes="(max-width: 768px) 256px, 288px"
                 priority
               />
-              {/* Gradient overlay at bottom */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
             </div>
           </motion.div>
         </div>
 
+        {/* What I Do Now */}
+        <motion.h3
+          className="text-xl md:text-2xl font-semibold mb-8 text-text-primary"
+          {...fadeInUp}
+        >
+          What I Do <span className="gradient-text">Now</span>
+        </motion.h3>
+
+        <div className="grid md:grid-cols-3 gap-4 mb-20">
+          {CURRENT_ROLES.map((role, i) => (
+            <motion.div
+              key={role.title}
+              className="group relative p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              whileHover={{ y: -2 }}
+            >
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <role.icon size={20} className="text-accent" />
+              </div>
+              <h4 className="font-semibold text-text-primary mb-2">
+                {role.title}
+              </h4>
+              <p className="text-sm text-text-secondary leading-relaxed mb-4">
+                {role.description}
+              </p>
+              {role.link && (
+                <a
+                  href={role.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-secondary transition-colors"
+                >
+                  {role.link.label}
+                  <ArrowUpRight size={14} />
+                </a>
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Competencies */}
         <motion.h3
           className="text-xl md:text-2xl font-semibold mb-8 text-text-primary"
           {...fadeInUp}
