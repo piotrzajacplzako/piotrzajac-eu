@@ -10,6 +10,7 @@ import {
   fadeInUp,
 } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export default function About() {
   return (
@@ -58,16 +59,9 @@ export default function About() {
           What I Do Now
         </motion.h3>
 
-        <div className="grid md:grid-cols-3 gap-4 mb-20">
+        <div className="grid md:grid-cols-2 gap-4 mb-20">
           {CURRENT_ROLES.map((role, i) => (
-            <motion.div
-              key={role.title}
-              className="group relative p-6 rounded-2xl bg-surface border border-border hover:border-border-strong hover:shadow-sm transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
+            <SpotlightCard key={role.title} index={i}>
               <div className="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center mb-4">
                 <role.icon size={20} className="text-accent" />
               </div>
@@ -88,7 +82,7 @@ export default function About() {
                   <ArrowUpRight size={14} />
                 </a>
               )}
-            </motion.div>
+            </SpotlightCard>
           ))}
         </div>
 
@@ -102,14 +96,7 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {COMPETENCIES.map((comp, i) => (
-            <motion.div
-              key={comp.title}
-              className="group p-6 rounded-2xl bg-surface border border-border hover:border-border-strong hover:shadow-sm transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
+            <SpotlightCard key={comp.title} index={i}>
               <div className="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center mb-4">
                 <comp.icon size={20} className="text-accent" />
               </div>
@@ -119,7 +106,7 @@ export default function About() {
               <p className="text-sm text-text-secondary leading-relaxed">
                 {comp.description}
               </p>
-            </motion.div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { VENTURE_FOCUS, fadeInUp } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export default function Ventures() {
   return (
@@ -27,14 +28,7 @@ export default function Ventures() {
 
         <div className="grid md:grid-cols-3 gap-4 mb-12">
           {VENTURE_FOCUS.map((area, i) => (
-            <motion.div
-              key={area.title}
-              className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong hover:shadow-sm transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
+            <SpotlightCard key={area.title} index={i}>
               <div className="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center mb-4">
                 <area.icon size={20} className="text-accent" />
               </div>
@@ -44,7 +38,7 @@ export default function Ventures() {
               <p className="text-sm text-text-secondary leading-relaxed">
                 {area.description}
               </p>
-            </motion.div>
+            </SpotlightCard>
           ))}
         </div>
 

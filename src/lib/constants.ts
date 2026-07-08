@@ -12,6 +12,7 @@ import {
   Hourglass,
   Network,
   Handshake,
+  EyeOff,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -48,6 +49,12 @@ export const CURRENT_ROLES: CurrentRole[] = [
     title: "HealthTech Director at Monterail",
     description:
       "I own Monterail's HealthTech strategy and client acquisition, positioning the company as the engineering partner of choice for founders and enterprises building regulated digital health products in the US and EU.",
+  },
+  {
+    icon: EyeOff,
+    title: "New Venture — In Stealth",
+    description:
+      "Something new is quietly taking shape in health. Too early for details — built on everything I've learned from 75+ shipped products and one exit. More soon.",
   },
   {
     icon: Newspaper,
@@ -118,24 +125,13 @@ export interface Milestone {
   description: string;
 }
 
+// Newest first
 export const JOURNEY: Milestone[] = [
   {
-    year: "2012",
-    title: "Founded Untitled Kingdom",
+    year: "Now",
+    title: "Building the Future of Health",
     description:
-      "Co-founded a software company in Kraków and grew it into a leading HealthTech studio — 75+ digital health products for clients like Elvie, Johnson & Johnson, and Takeda.",
-  },
-  {
-    year: "2022",
-    title: "President of EO Poland",
-    description:
-      "Elected President of Entrepreneurs' Organization Poland, part of the global EO network of founders.",
-  },
-  {
-    year: "2024",
-    title: "Successful Exit",
-    description:
-      "Untitled Kingdom acquired by Monterail in December 2024 — the close of a 13-year founder chapter.",
+      "Monterail HealthTech expansion · venture ecosystem in preventive medicine and longevity · HealthTech Pulse newsletter.",
   },
   {
     year: "2025",
@@ -144,10 +140,22 @@ export const JOURNEY: Milestone[] = [
       "Leading the HealthTech practice after the acquisition — strategy, brand, and client acquisition across US and EU markets.",
   },
   {
-    year: "Now",
-    title: "Building the Future of Health",
+    year: "2024",
+    title: "Successful Exit",
     description:
-      "Monterail HealthTech expansion · venture ecosystem in preventive medicine and longevity · HealthTech Pulse newsletter.",
+      "Untitled Kingdom acquired by Monterail in December 2024 — the close of a 13-year founder chapter.",
+  },
+  {
+    year: "2022",
+    title: "President of EO Poland",
+    description:
+      "Elected President of Entrepreneurs' Organization Poland, part of the global EO network of founders.",
+  },
+  {
+    year: "2012",
+    title: "Founded Untitled Kingdom",
+    description:
+      "Co-founded a software company in Kraków and grew it into a leading HealthTech studio — 75+ digital health products for clients like Elvie, Johnson & Johnson, and Takeda.",
   },
 ];
 

@@ -41,7 +41,7 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-text-secondary hover:text-accent transition-colors"
+              className="link-slide text-sm text-text-secondary hover:text-accent"
             >
               {link.label}
             </a>
