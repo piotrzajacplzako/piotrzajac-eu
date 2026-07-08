@@ -13,7 +13,7 @@ export default function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-text-muted hover:text-accent transition-colors"
+              className="link-slide text-sm text-text-muted hover:text-accent"
             >
               {link.label}
             </a>
@@ -22,7 +22,7 @@ export default function Footer() {
             href={PERSONAL.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-text-muted hover:text-accent transition-colors"
+            className="link-slide text-sm text-text-muted hover:text-accent"
           >
             LinkedIn
           </a>

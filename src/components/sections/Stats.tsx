@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { STATS, EASE_OUT } from "@/lib/constants";
+import CountUp from "@/components/ui/CountUp";
 
 export default function Stats() {
   return (
@@ -17,7 +18,7 @@ export default function Stats() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: EASE_OUT }}
             >
               <p className="font-display text-4xl md:text-5xl font-medium text-text-primary mb-2">
-                {stat.value}
+                <CountUp value={stat.value} />
               </p>
               <p className="text-sm text-text-muted leading-snug">
                 {stat.label}

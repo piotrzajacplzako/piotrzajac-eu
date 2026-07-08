@@ -5,6 +5,7 @@ import { Mail, MapPin } from "lucide-react";
 import { PERSONAL, WORK_PATHS, fadeInUp } from "@/lib/constants";
 import SocialLink from "@/components/ui/SocialLink";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 function LinkedinIcon({ size = 20 }: { size?: number }) {
   return (
@@ -49,14 +50,7 @@ export default function Contact() {
         {/* How we can work together */}
         <div className="grid md:grid-cols-3 gap-4 mb-16 text-left">
           {WORK_PATHS.map((path, i) => (
-            <motion.div
-              key={path.title}
-              className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong hover:shadow-sm transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
+            <SpotlightCard key={path.title} index={i}>
               <div className="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center mb-4">
                 <path.icon size={20} className="text-accent" />
               </div>
@@ -66,7 +60,7 @@ export default function Contact() {
               <p className="text-sm text-text-secondary leading-relaxed">
                 {path.description}
               </p>
-            </motion.div>
+            </SpotlightCard>
           ))}
         </div>
 
