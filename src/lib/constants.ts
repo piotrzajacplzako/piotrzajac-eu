@@ -158,9 +158,11 @@ export const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
+export const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
 export const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.6 },
+  transition: { duration: 0.7, ease: EASE_OUT },
 };

@@ -1,18 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { JOURNEY, fadeInUp } from "@/lib/constants";
+import { JOURNEY } from "@/lib/constants";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Journey() {
   return (
-    <section id="journey" className="py-24 md:py-32">
+    <section id="journey" className="py-24 md:py-32 border-t border-border">
       <div className="max-w-5xl mx-auto px-6">
-        <motion.div {...fadeInUp}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            The <span className="gradient-text">Journey</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-accent to-accent-secondary rounded-full mb-16" />
-        </motion.div>
+        <SectionHeading
+          overline="02 — Journey"
+          title="The Journey"
+          className="mb-16"
+        />
 
         <div className="relative">
           {/* Vertical line */}
@@ -29,8 +29,8 @@ export default function Journey() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 {/* Dot */}
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-surface border-2 border-accent/40 flex items-center justify-center">
-                  <span className="text-accent text-xs md:text-sm font-bold">
+                <div className="relative z-10 flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-surface border border-border-strong flex items-center justify-center shadow-sm">
+                  <span className="font-display text-accent text-xs md:text-sm font-semibold">
                     {milestone.year}
                   </span>
                 </div>

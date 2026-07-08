@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
 import { PERSONAL, fadeInUp } from "@/lib/constants";
 import SocialLink from "@/components/ui/SocialLink";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 function LinkedinIcon({ size = 20 }: { size?: number }) {
   return (
@@ -27,30 +28,33 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-24 md:py-32 border-t border-border">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <motion.div {...fadeInUp}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let&apos;s <span className="gradient-text">Talk</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-accent to-accent-secondary rounded-full mb-8 mx-auto" />
-          <p className="text-text-secondary text-base md:text-lg mb-12 max-w-lg mx-auto leading-relaxed">
-            Whether it&apos;s HealthTech product strategy, founder challenges,
-            market expansion, or just pressure-testing your roadmap — I&apos;m
-            always open to a good conversation.
-          </p>
-        </motion.div>
+        <SectionHeading
+          overline="03 — Contact"
+          title="Let's Talk"
+          align="center"
+          className="mb-8"
+        />
+
+        <motion.p
+          className="text-text-secondary text-base md:text-lg mb-12 max-w-lg mx-auto leading-relaxed"
+          {...fadeInUp}
+        >
+          Whether it&apos;s HealthTech product strategy, founder challenges,
+          market expansion, or just pressure-testing your roadmap — I&apos;m
+          always open to a good conversation.
+        </motion.p>
 
         <motion.a
           href={`mailto:${PERSONAL.email}`}
-          className="inline-flex items-center gap-3 text-xl md:text-2xl font-medium text-accent hover:text-accent-secondary transition-colors duration-300 mb-12"
+          className="font-display inline-flex items-center gap-3 text-2xl md:text-3xl font-medium text-text-primary hover:text-accent transition-colors duration-300 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          whileHover={{ scale: 1.02 }}
         >
-          <Mail size={24} />
+          <Mail size={26} className="text-accent" />
           {PERSONAL.email}
         </motion.a>
 

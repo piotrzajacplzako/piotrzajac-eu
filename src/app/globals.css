@@ -1,30 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0A0A0F;
-  --surface: #12121A;
-  --surface-light: #1A1A2E;
-  --text-primary: #EAEAF0;
-  --text-secondary: #8888A0;
-  --text-muted: #55556A;
-  --accent: #00D4FF;
-  --accent-secondary: #7B61FF;
-  --accent-glow: rgba(0, 212, 255, 0.2);
-  --border: #1E1E30;
+  --background: #faf9f6;
+  --surface: #ffffff;
+  --surface-muted: #f2f0ea;
+  --text-primary: #1c1b18;
+  --text-secondary: #57544c;
+  --text-muted: #8b877c;
+  --accent: #0e6b5c;
+  --accent-strong: #0a5448;
+  --accent-soft: rgba(14, 107, 92, 0.08);
+  --border: #e6e3da;
+  --border-strong: #d3cfc3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
-  --color-surface-light: var(--surface-light);
+  --color-surface-muted: var(--surface-muted);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
-  --color-accent-secondary: var(--accent-secondary);
-  --color-accent-glow: var(--accent-glow);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
 }
 
 body {
@@ -37,33 +40,40 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Subtle grid background for hero */
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(30, 30, 48, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 30, 48, 0.3) 1px, transparent 1px);
-  background-size: 60px 60px;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::selection {
+  background: var(--accent);
+  color: var(--surface);
 }
 
-/* Glow effect for accent elements */
-.accent-glow {
-  box-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(0, 212, 255, 0.1);
+/* Editorial display headings */
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
 }
 
-/* Background radial glow */
-.radial-glow {
-  background: radial-gradient(ellipse 600px 600px at 50% 50%, rgba(0, 212, 255, 0.06), transparent);
+/* Small-caps overline used above section headings */
+.overline-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Inline text links */
+.link-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.25s ease, color 0.25s ease;
+}
+
+.link-underline:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }
