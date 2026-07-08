@@ -8,6 +8,10 @@ import {
   Building2,
   Newspaper,
   Sprout,
+  Activity,
+  Hourglass,
+  Network,
+  Handshake,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -155,9 +159,77 @@ export const CLIENTS = [
   "MysteryVibe",
 ];
 
+export interface Stat {
+  value: string;
+  label: string;
+}
+
+export const STATS: Stat[] = [
+  { value: "15+", label: "years in HealthTech" },
+  { value: "75+", label: "digital health products shipped" },
+  { value: "13", label: "years as founder & CEO" },
+  { value: "1", label: "successful exit — Dec 2024" },
+];
+
+export interface FocusArea {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export const VENTURE_FOCUS: FocusArea[] = [
+  {
+    icon: Activity,
+    title: "Preventive Medicine",
+    description:
+      "Care that starts before the diagnosis — products that catch problems early instead of managing them late.",
+  },
+  {
+    icon: Hourglass,
+    title: "Longevity",
+    description:
+      "Extending healthspan, not just lifespan — turning longevity science into products people actually use.",
+  },
+  {
+    icon: Network,
+    title: "Ecosystem Approach",
+    description:
+      "Not one bet but a portfolio of connected ventures — sharing domain expertise, infrastructure, and lessons from 75+ shipped products.",
+  },
+];
+
+export interface WorkPath {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export const WORK_PATHS: WorkPath[] = [
+  {
+    icon: Building2,
+    title: "Build a health product",
+    description:
+      "Work with my team at Monterail on regulated digital health products — from first prototype to FDA/MDR-ready platforms.",
+  },
+  {
+    icon: Sprout,
+    title: "Partner on ventures",
+    description:
+      "Investing, co-founding, or bringing domain expertise to preventive medicine and longevity? Let's talk about building together.",
+  },
+  {
+    icon: Handshake,
+    title: "Connect founder-to-founder",
+    description:
+      "Through the EO network, HealthTech Pulse, or a straight-up conversation about the founder journey and exits.",
+  },
+];
+
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Journey", href: "#journey" },
+  { label: "Ventures", href: "#ventures" },
+  { label: "Newsletter", href: "#newsletter" },
   { label: "Contact", href: "#contact" },
 ];
 

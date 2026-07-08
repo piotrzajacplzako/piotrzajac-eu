@@ -35,7 +35,7 @@ export default function Hero() {
 
         <motion.div className="flex flex-wrap items-center gap-4" {...enter(0.3)}>
           <Button href="#contact">Let&apos;s Talk</Button>
-          <Button href={PERSONAL.linkedin} variant="secondary">
+          <Button href={PERSONAL.linkedin} variant="secondary" external>
             LinkedIn
           </Button>
         </motion.div>

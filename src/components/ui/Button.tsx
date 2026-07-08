@@ -6,10 +6,17 @@ interface ButtonProps {
   children: React.ReactNode;
   href?: string;
   variant?: "primary" | "secondary";
+  external?: boolean;
   onClick?: () => void;
 }
 
-export default function Button({ children, href, variant = "primary", onClick }: ButtonProps) {
+export default function Button({
+  children,
+  href,
+  variant = "primary",
+  external = false,
+  onClick,
+}: ButtonProps) {
   const baseClasses =
     "inline-flex items-center justify-center px-7 py-3 rounded-full font-medium text-base transition-colors duration-300 cursor-pointer";
 
@@ -30,6 +37,7 @@ export default function Button({ children, href, variant = "primary", onClick }:
       onClick={onClick}
       className={classes}
       whileTap={{ scale: 0.98 }}
+      {...(external && { target: "_blank", rel: "noopener noreferrer" })}
     >
       {children}
     </Component>
