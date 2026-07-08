@@ -41,9 +41,9 @@ export default function Contact() {
           className="text-text-secondary text-base md:text-lg mb-12 max-w-lg mx-auto leading-relaxed"
           {...fadeInUp}
         >
-          Whether it&apos;s HealthTech product strategy, founder challenges,
-          market expansion, or just pressure-testing your roadmap — I&apos;m
-          always open to a good conversation.
+          Building a digital health product? Exploring ventures in preventive
+          medicine? Or just want to trade founder notes? I&apos;m always open
+          to a good conversation.
         </motion.p>
 
         <motion.a
