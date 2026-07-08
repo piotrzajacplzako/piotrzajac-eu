@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,15 +9,36 @@ const inter = Inter({
   display: "swap",
 });
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  axes: ["opsz"],
+});
+
+const SITE_TITLE = "Piotr Zając — HealthTech Founder, Operator & Venture Builder";
+const SITE_DESCRIPTION =
+  "Exited founder of Untitled Kingdom, HealthTech Director at Monterail. 15+ years and 75+ digital health products shipped — now building ventures in preventive medicine and longevity.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://piotrzajac.eu"),
-  title: "Piotr Zając — Founder. Builder. HealthTech Leader.",
-  description:
-    "I build and scale digital health products that work — clinically, technically, and commercially. 15+ years, 75+ products, one successful exit.",
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "Piotr Zając",
+    "HealthTech",
+    "digital health",
+    "Untitled Kingdom",
+    "Monterail",
+    "preventive medicine",
+    "longevity",
+    "founder",
+  ],
+  authors: [{ name: "Piotr Zając", url: "https://piotrzajac.eu" }],
+  creator: "Piotr Zając",
   openGraph: {
-    title: "Piotr Zając — Founder. Builder. HealthTech Leader.",
-    description:
-      "I build and scale digital health products that work — clinically, technically, and commercially. 15+ years, 75+ products, one successful exit.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     url: "https://piotrzajac.eu",
     siteName: "Piotr Zając",
     locale: "en_US",
@@ -24,9 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Piotr Zając — Founder. Builder. HealthTech Leader.",
-    description:
-      "I build and scale digital health products that work — clinically, technically, and commercially.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
@@ -37,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -47,10 +68,28 @@ export default function RootLayout({
               "@type": "Person",
               name: "Piotr Zając",
               url: "https://piotrzajac.eu",
-              jobTitle: "Founder & HealthTech Leader",
+              jobTitle: "HealthTech Director",
+              description: SITE_DESCRIPTION,
               worksFor: {
                 "@type": "Organization",
                 name: "Monterail",
+              },
+              memberOf: {
+                "@type": "Organization",
+                name: "Entrepreneurs' Organization",
+              },
+              knowsAbout: [
+                "HealthTech",
+                "Digital health product development",
+                "FDA and MDR compliance",
+                "Preventive medicine",
+                "Longevity",
+                "Venture building",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Kraków",
+                addressCountry: "PL",
               },
               sameAs: ["https://linkedin.com/in/zajacp"],
             }),
@@ -58,7 +97,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background text-text-primary">
-        {children}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-full focus:bg-text-primary focus:text-background"
+        >
+          Skip to content
+        </a>
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

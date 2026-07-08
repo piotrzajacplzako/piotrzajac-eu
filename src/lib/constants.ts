@@ -8,6 +8,10 @@ import {
   Building2,
   Newspaper,
   Sprout,
+  Activity,
+  Hourglass,
+  Network,
+  Handshake,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -15,9 +19,9 @@ export const PERSONAL = {
   name: "Piotr",
   surname: "Zając",
   fullName: "Piotr Zając",
-  headline: "Founder. Builder. HealthTech Leader.",
+  headline: "Exited Founder. HealthTech Operator. Venture Builder.",
   tagline:
-    "I build and scale digital health products that work — clinically, technically, and commercially. 15+ years, 75+ products, one successful exit.",
+    "I've spent 15+ years turning medical expertise into software that scales — 75+ digital health products shipped, one company built and exited. Now I'm building what's next in preventive health and longevity.",
   email: "piotr.zajac@me.com",
   linkedin: "https://linkedin.com/in/zajacp",
   newsletter:
@@ -26,8 +30,9 @@ export const PERSONAL = {
 };
 
 export const ABOUT_BIO = [
-  "I'm an exited founder, HealthTech operator, and EO member who's spent 15+ years turning medical expertise into software that scales. I built Untitled Kingdom from zero to a leading HealthTech software company — 75+ delivered health products, clients like Elvie and Takeda, compliance-ready architecture for FDA and MDR — before a successful acquisition by Monterail in December 2024.",
-  "Today I lead Monterail's HealthTech practice, driving international expansion across US and EU markets. But my ambitions go beyond one company. I'm building an ecosystem of ventures in health, preventive medicine, and longevity — because I believe the best way to fix healthcare is to build the future of it, not wait for it.",
+  "I'm an exited founder and HealthTech operator. Over 13 years I built Untitled Kingdom from zero into a leading HealthTech software company: 75+ digital health products delivered for clients like Elvie, Johnson & Johnson, and Takeda, with compliance-ready architecture for FDA and MDR from day one. In December 2024 the company was acquired by Monterail.",
+  "Today I lead Monterail's HealthTech practice and its expansion across US and EU markets. Beyond that, I'm building an ecosystem of ventures in preventive medicine and longevity, writing the HealthTech Pulse newsletter, and staying close to the founder community through the Entrepreneurs' Organization, where I served as President of EO Poland.",
+  "I believe the best way to fix healthcare is to build the future of it, not wait for it.",
 ];
 
 export interface CurrentRole {
@@ -42,13 +47,13 @@ export const CURRENT_ROLES: CurrentRole[] = [
     icon: Building2,
     title: "HealthTech Director at Monterail",
     description:
-      "I own Monterail's HealthTech strategy, brand awareness, and client acquisition. Following the acquisition of Untitled Kingdom, I'm positioning Monterail as the go-to engineering partner for founders and enterprises building regulated digital health products across US and EU markets.",
+      "I own Monterail's HealthTech strategy and client acquisition, positioning the company as the engineering partner of choice for founders and enterprises building regulated digital health products in the US and EU.",
   },
   {
     icon: Newspaper,
     title: "HealthTech Pulse",
     description:
-      "My newsletter where I share insights on building and scaling digital health products, regulatory challenges, and what's actually working in HealthTech.",
+      "My LinkedIn newsletter on building and scaling digital health products: regulatory reality, product decisions, and what's actually working in HealthTech right now.",
     link: {
       label: "Read on LinkedIn",
       href: "https://www.linkedin.com/newsletters/healthtech-pulse-7069731560584826881/",
@@ -58,7 +63,7 @@ export const CURRENT_ROLES: CurrentRole[] = [
     icon: Sprout,
     title: "Venture Ecosystem",
     description:
-      "Building an ecosystem of ventures in health, preventive medicine, and longevity. Combining founder experience with healthcare domain expertise to create what's next.",
+      "Building an ecosystem of ventures in preventive medicine and longevity — pairing founder experience with deep healthcare domain expertise to create what's next.",
   },
 ];
 
@@ -79,7 +84,7 @@ export const COMPETENCIES: Competency[] = [
     icon: Rocket,
     title: "Founder & Exit Experience",
     description:
-      "Built Untitled Kingdom (13 years), scaled it, and led it to acquisition. I know the founder journey inside out.",
+      "Built Untitled Kingdom over 13 years, scaled it, and led it to acquisition. I know the founder journey from first invoice to term sheet.",
   },
   {
     icon: ShieldCheck,
@@ -117,30 +122,32 @@ export const JOURNEY: Milestone[] = [
   {
     year: "2012",
     title: "Founded Untitled Kingdom",
-    description: "Co-founded a HealthTech software company in Kraków",
+    description:
+      "Co-founded a software company in Kraków and grew it into a leading HealthTech studio — 75+ digital health products for clients like Elvie, Johnson & Johnson, and Takeda.",
   },
   {
     year: "2022",
     title: "President of EO Poland",
     description:
-      "Elected President of Entrepreneurs' Organization Poland",
+      "Elected President of Entrepreneurs' Organization Poland, part of the global EO network of founders.",
   },
   {
     year: "2024",
     title: "Successful Exit",
-    description: "Untitled Kingdom acquired by Monterail",
+    description:
+      "Untitled Kingdom acquired by Monterail in December 2024 — the close of a 13-year founder chapter.",
   },
   {
     year: "2025",
     title: "HealthTech Director at Monterail",
     description:
-      "Leading HealthTech practice after Untitled Kingdom acquisition — strategy, brand awareness, client acquisition",
+      "Leading the HealthTech practice after the acquisition — strategy, brand, and client acquisition across US and EU markets.",
   },
   {
     year: "Now",
     title: "Building the Future of Health",
     description:
-      "Monterail HealthTech expansion · Venture ecosystem in preventive medicine · HealthTech Pulse newsletter",
+      "Monterail HealthTech expansion · venture ecosystem in preventive medicine and longevity · HealthTech Pulse newsletter.",
   },
 ];
 
@@ -152,15 +159,85 @@ export const CLIENTS = [
   "MysteryVibe",
 ];
 
+export interface Stat {
+  value: string;
+  label: string;
+}
+
+export const STATS: Stat[] = [
+  { value: "15+", label: "years in HealthTech" },
+  { value: "75+", label: "digital health products shipped" },
+  { value: "13", label: "years as founder & CEO" },
+  { value: "1", label: "successful exit — Dec 2024" },
+];
+
+export interface FocusArea {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export const VENTURE_FOCUS: FocusArea[] = [
+  {
+    icon: Activity,
+    title: "Preventive Medicine",
+    description:
+      "Care that starts before the diagnosis — products that catch problems early instead of managing them late.",
+  },
+  {
+    icon: Hourglass,
+    title: "Longevity",
+    description:
+      "Extending healthspan, not just lifespan — turning longevity science into products people actually use.",
+  },
+  {
+    icon: Network,
+    title: "Ecosystem Approach",
+    description:
+      "Not one bet but a portfolio of connected ventures — sharing domain expertise, infrastructure, and lessons from 75+ shipped products.",
+  },
+];
+
+export interface WorkPath {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export const WORK_PATHS: WorkPath[] = [
+  {
+    icon: Building2,
+    title: "Build a health product",
+    description:
+      "Work with my team at Monterail on regulated digital health products — from first prototype to FDA/MDR-ready platforms.",
+  },
+  {
+    icon: Sprout,
+    title: "Partner on ventures",
+    description:
+      "Investing, co-founding, or bringing domain expertise to preventive medicine and longevity? Let's talk about building together.",
+  },
+  {
+    icon: Handshake,
+    title: "Connect founder-to-founder",
+    description:
+      "Through the EO network, HealthTech Pulse, or a straight-up conversation about the founder journey and exits.",
+  },
+];
+
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Journey", href: "#journey" },
+  { label: "Ventures", href: "#ventures" },
+  { label: "Newsletter", href: "#newsletter" },
   { label: "Contact", href: "#contact" },
 ];
 
+export const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
 export const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.6 },
+  transition: { duration: 0.7, ease: EASE_OUT },
 };
